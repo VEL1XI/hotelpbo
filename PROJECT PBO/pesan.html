@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Reservasi Kamar</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Formulir Reservasi Kamar</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="kamar.html">Kamar</a>
+      <a href="pesan.html">Reservasi</a>
+      <a href="ubah-batal.html">Ubah/Batal Reservasi</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="reservation-form">
+      <form action="php/reserve.php" method="POST">
+        <label for="guest_name">Nama Lengkap:</label>
+        <input type="text" id="guest_name" name="guest_name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Nomor Telepon:</label>
+        <input type="text" id="phone" name="phone" required />
+
+        <label for="room_type">Jenis Kamar:</label>
+        <select id="room_type" name="room_type" required>
+          <option value="1">Kamar Deluxe</option>
+          <option value="2">Kamar Standard</option>
+          <option value="3">Kamar Family</option>
+        </select>
+
+        <label for="checkin">Tanggal Check-in:</label>
+        <input type="date" id="checkin" name="checkin" required />
+
+        <label for="checkout">Tanggal Check-out:</label>
+        <input type="date" id="checkout" name="checkout" required />
+
+        <label for="payment">Metode Pembayaran:</label>
+        <select id="payment" name="payment" required>
+          <option value="transfer">Transfer Bank</option>
+          <option value="card">Kartu Kredit/Debit</option>
+          <option value="cash">Bayar di Tempat</option>
+        </select>
+
+        <button type="submit">Konfirmasi Reservasi</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hotel Nyaman</p>
+  </footer>
+</body>
+</html>
