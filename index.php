@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Booking - Cek Ketersediaan Kamar</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Selamat Datang di Hotel Nyaman</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="kamar.html">Kamar</a>
+      <a href="pesan.html">Reservasi</a>
+      <a href="ubah-batal.html">Ubah/Batal Reservasi</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <h2>Cek Ketersediaan Kamar</h2>
+      <form action="php/search.php" method="GET">
+        <label for="checkin">Check-in:</label>
+        <input type="date" name="checkin" required>
+
+        <label for="checkout">Check-out:</label>
+        <input type="date" name="checkout" required>
+
+        <label for="guests">Jumlah Tamu:</label>
+        <input type="number" name="guests" min="1" max="10" required>
+
+        <button type="submit">Cari</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hotel Nyaman</p>
+  </footer>
+</body>
+</html>
