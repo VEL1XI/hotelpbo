@@ -1,10 +1,19 @@
+<?php
+// Mulai session untuk manajemen login
+session_start();
+
+// Cek apakah user sudah login
+$logged_in = isset($_SESSION['user_id']);
+$user_name = $logged_in ? $_SESSION['user_name'] : '';
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Hebat</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
       margin: 0;
@@ -246,12 +255,17 @@
   <header>
     <div><strong>HOTEL HEBAT</strong></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#rooms">Kamar</a>
-      <a href="index.html#facilities">Facilities</a>
-      <a href="index.html#about">About Us</a>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
+      <a href="index.php">Home</a>
+      <a href="#rooms">Kamar</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#about">About Us</a>
+      <?php if($logged_in): ?>
+        <a href="user/user_dashboard.php">Dashboard</a>
+        <a href="auth/logout.php">Logout (<?php echo htmlspecialchars($user_name); ?>)</a>
+      <?php else: ?>
+        <a href="auth/login.php">Login</a>
+        <a href="auth/register.html">Register</a>
+      <?php endif; ?>
     </nav>
   </header>
 
@@ -259,7 +273,7 @@
     <h1>Hotel Hebat</h1>
     <div class="search-box">
       <h2>Cek Ketersediaan Kamar</h2>
-      <form action="php/search.php" method="GET">
+      <form action="booking/search.php" method="GET">
         <div>
           <label for="checkin">Check-in:</label>
           <input type="date" name="checkin" id="checkin" required>
