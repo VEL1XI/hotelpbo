@@ -256,7 +256,7 @@ $user_name = $logged_in ? $_SESSION['user_name'] : '';
     <div><strong>HOTEL HEBAT</strong></div>
     <nav>
       <a href="index.php">Home</a>
-      <a href="#rooms">Kamar</a>
+      <a href="booking/kamar.php">Kamar</a>
       <a href="#facilities">Facilities</a>
       <a href="#about">About Us</a>
       <?php if($logged_in): ?>

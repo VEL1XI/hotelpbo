@@ -1,6 +1,6 @@
 <?php
 // Include database connection
-require_once '../config/database.php';;
+require_once '../config/database.php';
 
 // Check if the required parameters are set
 if (!isset($_GET['checkin']) || !isset($_GET['checkout']) || !isset($_GET['guests'])) {
